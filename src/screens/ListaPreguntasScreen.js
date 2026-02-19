@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator, Button, FlatList, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, Button, FlatList, StyleSheet, Text, View } from 'react-native';
 import usePublicPreguntas from '../hooks/usePublicPreguntas';
 
 export default function ListaPreguntasScreen() {
@@ -14,8 +14,8 @@ export default function ListaPreguntasScreen() {
   );
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.note}>Nota: en dispositivo físico use la IP de la máquina en lugar de localhost.</Text>
+    <View style={styles.container}>
+      <Text style={styles.note}>Lista de preguntas activas</Text>
 
       {loading && (
         <View style={styles.center}>
@@ -39,7 +39,7 @@ export default function ListaPreguntasScreen() {
           ListEmptyComponent={<Text style={styles.empty}>No hay preguntas disponibles.</Text>}
         />
       )}
-    </SafeAreaView>
+    </View>
   );
 }
 
@@ -52,5 +52,5 @@ const styles = StyleSheet.create({
   list: { paddingBottom: 24 },
   error: { color: 'red', marginBottom: 8 },
   empty: { textAlign: 'center', marginTop: 24, color: '#666' },
-  note: { fontSize: 12, color: '#333', marginBottom: 8 },
+  note: { fontSize: 24, fontWeight: '700', color: '#111', marginBottom: 16 },
 });
